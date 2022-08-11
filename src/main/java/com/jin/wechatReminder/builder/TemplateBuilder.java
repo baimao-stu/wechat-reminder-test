@@ -52,7 +52,7 @@ public class TemplateBuilder {
         data.put("humidity", new ParamDto(weather.getHumidity(), "#ff0033"));
         data.put("wind", new ParamDto(weather.getWin() + weather.getWin_speed() + " " + weather.getWin_meter(), "#3399ff"));
         data.put("word", new ParamDto(sweetWordService.getSweetWord(), "#8C8C8C"));
-        if (DataUtil.isWorkDay() && (weather.getWea().contains("雨") || weather.getWea_img().contains("yu"))) {
+        if (DataUtil.isWorkDay() && (weather.getWea().contains("雨"))) {
             data.put("notice", new ParamDto(System.lineSeparator() + "小马虎请注意！今天有雨，记得带伞，注意安全，走路不要玩手机，到了公司报平安！", "#1cbbb4"));
         }
         return wechatSendBody;
