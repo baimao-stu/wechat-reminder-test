@@ -2,4 +2,4 @@ server:
   port: 8888
 logging:
   level:
-    com.jin: info
+    com.jin.wechatReminder: info

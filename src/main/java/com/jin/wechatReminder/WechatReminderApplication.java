@@ -57,7 +57,6 @@ public class WechatReminderApplication {
                 HttpResponse response = HttpRequest.post(sendUrl)
                         .body(body).execute();
                 logger.info("send message response:" + response.toString());
-
             }
         }
     }
