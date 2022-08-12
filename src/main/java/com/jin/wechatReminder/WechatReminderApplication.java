@@ -36,7 +36,7 @@ public class WechatReminderApplication {
     @Autowired
     private WechatAccessTokenService accessTokenService;
 
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args){
         SpringApplication.run(WechatReminderApplication.class, args);
     }
 
@@ -47,16 +47,18 @@ public class WechatReminderApplication {
     public class testSend implements ApplicationListener<ContextRefreshedEvent> {
         @Override
         public void onApplicationEvent(ContextRefreshedEvent contextRefreshedEvent) {
-            if (contextRefreshedEvent.getApplicationContext().getParent() == null) {// 保证只执行一次
+            // 保证只执行一次
+            if (contextRefreshedEvent.getApplicationContext().getParent() == null) {
                 WechatSendBody wechatSendBody = templateBuilder.buildMorningTemplate();
+                // 指定测试用户的id
                 wechatSendBody.setTouser("oQoJI68eGRrYXIcZcY-0HKXsnfRM");
                 String body = JSON.toJSONString(wechatSendBody);
-                logger.info("send message data:" + body);
+                logger.info("send message data:{}",body);
                 String sendUrl = wechatConfig.getSendUrl() + accessTokenService.getAccessToken();
-                logger.info("send message sendUrl:" + sendUrl);
+                logger.info("send message sendUrl:{}",sendUrl);
                 HttpResponse response = HttpRequest.post(sendUrl)
                         .body(body).execute();
-                logger.info("send message response:" + response.toString());
+                logger.info("send message response:{}{}",System.lineSeparator(),response.toString());
             }
         }
     }

@@ -43,16 +43,16 @@ public class WechatAccessTokenService {
      * @return AccessToken
      */
     public String getAccessToken(String appID) {
-        logger.info("getAccessToken by appId: " + appID);
+        logger.info("getAccessToken by appId:{}", appID);
         Map<String, Object> accessTokenInfo = TOKEN_CACHE.get(CACHE_ACCESS_TOKEN + appID);
         if (!CollectionUtils.isEmpty(accessTokenInfo) &&
                 ((LocalDateTime) accessTokenInfo.get("expiration")).isAfter(LocalDateTime.now())) {
             String accessToken = (String) accessTokenInfo.get("accessToken");
-            logger.info("getAccessToken from cache, accessToken: " + accessToken);
+            logger.info("getAccessToken from cache, accessToken:{}", accessToken);
             return accessToken;
         }
         HttpResponse response = HttpRequest.get(getWechatAccessTokenUrl()).execute();
-        logger.info("getAccessToken from wechat api, body: " + response.toString());
+        logger.info("getAccessToken from wechat api, data: {}{}", System.lineSeparator(), response.toString());
         if (response.isOk()) {
             JSONObject jsonObject = JSON.parseObject(response.body());
             Object errcode = jsonObject.get("errcode");
@@ -67,7 +67,7 @@ public class WechatAccessTokenService {
                 return accessToken;
             }
         }
-        return null;
+        throw new RuntimeException("can not get AccessToken with appid=" + appID);
     }
 
     public String getAccessToken() {
