@@ -1,1 +1,1 @@
-{"fans_list":[{"nickname":"赚钱养花花","openid":"oQoJI68eGRrYXIcZcY-0HKXsnfRM"}]}
+{"fans_list":[{"nickname":"用户昵称","openid":"用户openId"}]}
