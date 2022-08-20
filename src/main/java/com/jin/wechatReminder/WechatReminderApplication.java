@@ -51,7 +51,8 @@ public class WechatReminderApplication {
             if (contextRefreshedEvent.getApplicationContext().getParent() == null) {
                 WechatSendBody wechatSendBody = templateBuilder.buildMorningTemplate();
                 // 指定测试用户的id
-                wechatSendBody.setTouser("oQoJI68eGRrYXIcZcY-0HKXsnfRM");
+                //  TODO 测试id
+                wechatSendBody.setTouser("测试ID");
                 String body = JSON.toJSONString(wechatSendBody);
                 logger.info("send message data:{}",body);
                 String sendUrl = wechatConfig.getSendUrl() + accessTokenService.getAccessToken();
