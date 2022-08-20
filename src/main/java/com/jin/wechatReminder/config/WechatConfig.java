@@ -28,8 +28,8 @@ public class WechatConfig {
     @Bean
     @Primary
     public WechatConfig wechatConfig() {
-        final String appId = "wxef6401cd07caa58a";
-        final String appSecret = "cdb4900ab4132a9b00497e5f545db7ba";
+        final String appId = "个人测试号的appId";
+        final String appSecret = "个人测试号的appSecret";
         final String accessUrl = "https://api.weixin.qq.com/cgi-bin/token";
         final String sendUrl = "https://api.weixin.qq.com/cgi-bin/message/template/send?access_token=";
         return new WechatConfig(appId, appSecret, accessUrl, sendUrl);
