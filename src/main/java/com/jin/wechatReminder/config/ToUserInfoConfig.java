@@ -36,10 +36,7 @@ public class ToUserInfoConfig {
     @Bean
     @Primary
     public ToUserInfoConfig toUserInfoConfig() {
-        // 富富得郑	oQoJI642_5s6WUyhbjVU-n2IIqHI
-        // 赚钱养花花	oQoJI68eGRrYXIcZcY-0HKXsnfRM
-        // final String openId = "oQoJI68eGRrYXIcZcY-0HKXsnfRM";
-        final String openId = "oQoJI642_5s6WUyhbjVU-n2IIqHI";
+        final String openId = "待推送的userId";
         final LocalDate loveDay = LocalDate.of(2021, 7, 28);
         final LocalDate birthday = LocalDate.of(1997, 10, 15);
         final String city = "合肥";
