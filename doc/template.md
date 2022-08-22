@@ -2,6 +2,26 @@
 
 ### 每日提醒
 
+> 模板名：开学提醒
+```text
+{{today.DATA}} 
+距离开学还有 {{schoolDay.DATA}}天 
+今日天气 {{weather.DATA}} 
+今日温度 {{temp.DATA}}度 
+空气湿度 {{humidity.DATA}} 
+风向 {{wind.DATA}} 
+ps: 
+{{word.DATA}}
+{{notice.DATA}}
+```
+<https://www.runoob.com>
+
+> 模板名：夜宵时间
+```text
+{{today.DATA}} 
+现在是 {{nightSnackTime.DATA}}, 宵夜时间！
+```
+
 > 模板名称：早安，亲爱的老婆大人~
 
 ```text

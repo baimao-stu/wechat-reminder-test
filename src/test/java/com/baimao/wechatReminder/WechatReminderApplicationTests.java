@@ -1,6 +1,6 @@
-package com.jin.wechatReminder;
+package com.baimao.wechatReminder;
 
-import com.jin.wechatReminder.service.WechatAccessTokenService;
+import com.baimao.wechatReminder.service.WechatAccessTokenService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

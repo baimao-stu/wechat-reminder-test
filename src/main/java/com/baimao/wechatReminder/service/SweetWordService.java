@@ -1,8 +1,9 @@
-package com.jin.wechatReminder.service;
+package com.baimao.wechatReminder.service;
 
 import cn.hutool.http.HttpRequest;
 import cn.hutool.http.HttpResponse;
 import com.alibaba.fastjson2.JSONObject;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.util.Map;
@@ -16,7 +17,8 @@ import java.util.Objects;
 @Service
 public class SweetWordService {
 
-    private static final String BASE_URL = "https://api.shadiao.pro/chp";
+    @Value("${wordurl}")
+    private String BASE_URL;
 
     private static final String BASE_WORD = "今天没有骚话，只爱你！";
 

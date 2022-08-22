@@ -1,8 +1,9 @@
-package com.jin.wechatReminder.utils;
+package com.baimao.wechatReminder.utils;
 
 import cn.hutool.core.date.ChineseDate;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.TextStyle;
 import java.util.Locale;
@@ -71,6 +72,22 @@ public class DataUtil {
     public static String getDiffDays(LocalDate date) {
         LocalDate now = LocalDate.now();
         return String.valueOf(now.toEpochDay() - date.toEpochDay() + 1);
+    }
+
+    /**
+     * 当前日期距离指定日期相差的天数
+     */
+    public static String getFutureDays(LocalDate date) {
+        LocalDate now = LocalDate.now();
+        return String.valueOf(date.toEpochDay() - now.toEpochDay());
+    }
+
+     /**
+     *  夜宵时间
+     */
+    public static String getSnackTime() {
+        LocalDateTime now = LocalDateTime.now();
+        return now.getHour() + ":" + now.getMinute();
     }
 
     /**

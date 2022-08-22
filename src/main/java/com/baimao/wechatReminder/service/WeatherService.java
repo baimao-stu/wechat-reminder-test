@@ -1,11 +1,11 @@
-package com.jin.wechatReminder.service;
+package com.baimao.wechatReminder.service;
 
 import cn.hutool.core.thread.ThreadUtil;
 import cn.hutool.http.HttpRequest;
 import cn.hutool.http.HttpResponse;
 import com.alibaba.fastjson2.JSONObject;
-import com.jin.wechatReminder.config.ToUserInfoConfig;
-import com.jin.wechatReminder.entity.Weather;
+import com.baimao.wechatReminder.config.ToUserInfoConfig;
+import com.baimao.wechatReminder.entity.Weather;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,8 +18,12 @@ import java.util.Objects;
 @Service
 public class WeatherService {
 
-    private static final String APP_ID = "12917378";
-    private static final String APP_SECRET = "5Vc0YjTj";
+//    private static final String APP_ID = "12917378";
+//    private static final String APP_SECRET = "5Vc0YjTj";
+//    private static final String REQ_URL = "https://v0.yiketianqi.com/free/day";
+
+    private static final String APP_ID = "55492464";
+    private static final String APP_SECRET = "Wvz63og4";
     private static final String REQ_URL = "https://v0.yiketianqi.com/free/day";
 
 

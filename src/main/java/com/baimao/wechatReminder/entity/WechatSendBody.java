@@ -1,4 +1,4 @@
-package com.jin.wechatReminder.entity;
+package com.baimao.wechatReminder.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;

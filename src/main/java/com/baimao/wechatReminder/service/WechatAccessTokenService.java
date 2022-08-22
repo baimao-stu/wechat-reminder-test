@@ -1,10 +1,10 @@
-package com.jin.wechatReminder.service;
+package com.baimao.wechatReminder.service;
 
 import cn.hutool.http.HttpRequest;
 import cn.hutool.http.HttpResponse;
 import com.alibaba.fastjson2.JSON;
 import com.alibaba.fastjson2.JSONObject;
-import com.jin.wechatReminder.config.WechatConfig;
+import com.baimao.wechatReminder.config.WechatConfig;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,4 +1,4 @@
-package com.jin.wechatReminder.config;
+package com.baimao.wechatReminder.config;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -28,8 +28,8 @@ public class WechatConfig {
     @Bean
     @Primary
     public WechatConfig wechatConfig() {
-        final String appId = "个人测试号的appId";
-        final String appSecret = "个人测试号的appSecret";
+        final String appId = "wxb970eaa56375d1c3";
+        final String appSecret = "1ecc42fd1c52b542732733c81ea5f31e";
         final String accessUrl = "https://api.weixin.qq.com/cgi-bin/token";
         final String sendUrl = "https://api.weixin.qq.com/cgi-bin/message/template/send?access_token=";
         return new WechatConfig(appId, appSecret, accessUrl, sendUrl);

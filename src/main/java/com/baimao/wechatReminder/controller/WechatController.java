@@ -1,8 +1,8 @@
-package com.jin.wechatReminder.controller;
+package com.baimao.wechatReminder.controller;
 
 
-import com.jin.wechatReminder.entity.WechatVerifyTokenDto;
-import com.jin.wechatReminder.utils.WechatVerifyUtil;
+import com.baimao.wechatReminder.entity.WechatVerifyTokenDto;
+import com.baimao.wechatReminder.utils.WechatVerifyUtil;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.stereotype.Controller;

@@ -1,6 +1,6 @@
-package com.jin.wechatReminder.utils;
+package com.baimao.wechatReminder.utils;
 
-import com.jin.wechatReminder.entity.WechatVerifyTokenDto;
+import com.baimao.wechatReminder.entity.WechatVerifyTokenDto;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;

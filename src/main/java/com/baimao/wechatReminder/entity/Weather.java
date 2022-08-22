@@ -1,4 +1,4 @@
-package com.jin.wechatReminder.entity;
+package com.baimao.wechatReminder.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

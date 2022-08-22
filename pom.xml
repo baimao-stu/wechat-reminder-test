@@ -8,15 +8,14 @@
         <version>2.7.2</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.jin</groupId>
+    <groupId>com.baimao</groupId>
     <artifactId>wechat-reminder</artifactId>
     <version>1.0.2</version>
-    <name>wechat-reminder</name>
-    <description>wechat-reminder</description>
+
     <properties>
-        <java.version>17</java.version>
-        <docker.image.prefix>registry.cn-hangzhou.aliyuncs.com</docker.image.prefix>
-        <docker.image.midfix>jin-tao</docker.image.midfix>
+        <java.version>8</java.version>
+        <docker.image.prefix>registry.cn-qingdao.aliyuncs.com</docker.image.prefix>
+        <docker.image.midfix>spztsz</docker.image.midfix>
     </properties>
     <dependencies>
         <!--springboot web jar包-->
@@ -66,31 +65,31 @@
     <build>
         <plugins>
             <!-- 使用Maven插件直接将应用打包为一个Docker镜像 -->
-            <plugin>
-                <groupId>com.spotify</groupId>
-                <artifactId>dockerfile-maven-plugin</artifactId>
-                <version>1.4.13</version>
-                <configuration>
-                    <useMavenSettingsForAuth>true</useMavenSettingsForAuth>
-                    <repository>${docker.image.prefix}/${docker.image.midfix}/${project.artifactId}</repository>
-                    <tag>${project.version}</tag>
-                    <buildArgs>
-                        <JAR_FILE>${project.build.finalName}.jar</JAR_FILE>
-                    </buildArgs>
-                    <useMavenSettingsForAuth>true</useMavenSettingsForAuth>
-                </configuration>
-                <!-- 镜像构建完毕之后自动推送到仓库 -->
-                <executions>
-                    <execution>
-                        <id>default</id>
-                        <phase>install</phase>
-                        <goals>
-                            <goal>build</goal>
-                            <goal>push</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
+<!--            <plugin>-->
+<!--                <groupId>com.spotify</groupId>-->
+<!--                <artifactId>dockerfile-maven-plugin</artifactId>-->
+<!--                <version>1.4.13</version>-->
+<!--                <configuration>-->
+<!--                    <useMavenSettingsForAuth>true</useMavenSettingsForAuth>-->
+<!--                    <repository>${docker.image.prefix}/${docker.image.midfix}/${project.artifactId}</repository>-->
+<!--                    <tag>${project.version}</tag>-->
+<!--                    <buildArgs>-->
+<!--                        <JAR_FILE>${project.build.finalName}.jar</JAR_FILE>-->
+<!--                    </buildArgs>-->
+<!--                    <useMavenSettingsForAuth>true</useMavenSettingsForAuth>-->
+<!--                </configuration>-->
+<!--                &lt;!&ndash; 镜像构建完毕之后自动推送到仓库 &ndash;&gt;-->
+<!--                <executions>-->
+<!--                    <execution>-->
+<!--                        <id>default</id>-->
+<!--                        <phase>install</phase>-->
+<!--                        <goals>-->
+<!--                            <goal>build</goal>-->
+<!--                            <goal>push</goal>-->
+<!--                        </goals>-->
+<!--                    </execution>-->
+<!--                </executions>-->
+<!--            </plugin>-->
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
