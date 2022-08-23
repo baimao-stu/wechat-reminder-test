@@ -46,34 +46,33 @@ public class WechatReminderApplication {
     /**
      * 项目启动完后测试一下
      */
-//    @Service
-//    public class testSend implements ApplicationListener<ContextRefreshedEvent> {
-//        @Override
-//        public void onApplicationEvent(ContextRefreshedEvent contextRefreshedEvent) {
-//            // 保证只执行一次
-//            if (contextRefreshedEvent.getApplicationContext().getParent() == null) {
-//
+    @Service
+    public class testSend implements ApplicationListener<ContextRefreshedEvent> {
+        @Override
+        public void onApplicationEvent(ContextRefreshedEvent contextRefreshedEvent) {
+            // 保证只执行一次
+            if (contextRefreshedEvent.getApplicationContext().getParent() == null) {
+
 //                for(String openId:openids) {
-//                    /**指定测试用户的id*/
-//                    WechatSendBody wechatSendBody = templateBuilder.buildMorningTemplate(openId);
-//                    String body = JSON.toJSONString(wechatSendBody);
-//                    logger.info("send message data:{}",body);
-//                    String sendUrl = wechatConfig.getSendUrl() + accessTokenService.getAccessToken();
-//                    logger.info("send message sendUrl:{}",sendUrl);
-//                    HttpResponse response = HttpRequest.post(sendUrl)
-//                            .body(body).execute();
-//                    logger.info("send message response:{}{}",System.lineSeparator(),response.toString());
-//
+                    /**指定测试用户的id*/
+                    WechatSendBody wechatSendBody = templateBuilder.buildMorningTemplate(openids[0]);
+                    String body = JSON.toJSONString(wechatSendBody);
+                    logger.info("send message data:{}",body);
+                    String sendUrl = wechatConfig.getSendUrl() + accessTokenService.getAccessToken();
+                    logger.info("send message sendUrl:{}",sendUrl);
+                    HttpResponse response = HttpRequest.post(sendUrl)
+                            .body(body).execute();
+                    logger.info("send message response:{}{}",System.lineSeparator(),response.toString());
+
 
                     /**宵夜测试*/
-//                wechatSendBody = templateBuilder.buildSnackTemplate();
-//                wechatSendBody.setTouser("oYS9T6P-NQv4N4pJ5HuWsQZkKDSY");
-//                body = JSON.toJSONString(wechatSendBody);
-//                response = HttpRequest.post(sendUrl)
-//                        .body(body).execute();
-//                logger.info("send message response:{}{}",System.lineSeparator(),response.toString());
+                    wechatSendBody = templateBuilder.buildSnackTemplate(openids[0]);
+                    body = JSON.toJSONString(wechatSendBody);
+                    response = HttpRequest.post(sendUrl)
+                            .body(body).execute();
+                    logger.info("send message response:{}{}",System.lineSeparator(),response.toString());
 //                }
-//            }
-//        }
-//    }
+            }
+        }
+    }
 }

@@ -36,42 +36,40 @@ public class DailyGreetingTask {
     @Autowired
     private TemplateBuilder templateBuilder;
 
+    /** 发送请求 */
+    public HttpResponse send(String body) {
+        logger.info("send message data:" + body);
+        String sendUrl = wechatConfig.getSendUrl() + accessTokenService.getAccessToken();
+        logger.info("send message sendUrl:" + sendUrl);
+        HttpResponse response = HttpRequest.post(sendUrl)
+                .body(body).execute();
+        logger.info("send message response:" + response.toString());
+        return response;
+    }
+
+    /** 早上好 */
     @Scheduled(cron = "0 00 08 ? * *")
-    private void morning() {
+    public void morning() {
         for(String openId:userInfoConfig.getOpenids()) {
             String body = JSON.toJSONString(templateBuilder.buildMorningTemplate(openId));
-            logger.info("send message data:" + body);
-            String sendUrl = wechatConfig.getSendUrl() + accessTokenService.getAccessToken();
-            logger.info("send message sendUrl:" + sendUrl);
-            HttpResponse response = HttpRequest.post(sendUrl)
-                    .body(body).execute();
-            logger.info("send message response:" + response.toString());
+            send(body);
         }
     }
 
-    @Scheduled(cron = "0 00 22 ? * *")
-    private void evening() {
+    /** 晚上好 */
+    @Scheduled(cron = "0 00 18 ? * *")
+    public void evening() {
         for(String openId:userInfoConfig.getOpenids()) {
             String body = JSON.toJSONString(templateBuilder.buildEveningTemplate(openId));
-            logger.info("send message data:" + body);
-            String sendUrl = wechatConfig.getSendUrl() + accessTokenService.getAccessToken();
-            logger.info("send message sendUrl:" + sendUrl);
-            HttpResponse response = HttpRequest.post(sendUrl)
-                    .body(body).execute();
-            logger.info("send message response:" + response.toString());
+            send(body);
         }
     }
-
+    /** 吃夜宵啦 */
     @Scheduled(cron = "0 30 22 ? * *")
-    private void nightSnackTime() {
+    public void nightSnackTime() {
         for(String openId:userInfoConfig.getOpenids()) {
             String body = JSON.toJSONString(templateBuilder.buildSnackTemplate(openId));
-            logger.info("send message data:" + body);
-            String sendUrl = wechatConfig.getSendUrl() + accessTokenService.getAccessToken();
-            logger.info("send message sendUrl:" + sendUrl);
-            HttpResponse response = HttpRequest.post(sendUrl)
-                    .body(body).execute();
-            logger.info("send message response:" + response.toString());
+            send(body);
         }
     }
 

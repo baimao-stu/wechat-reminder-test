@@ -18,12 +18,9 @@ import java.util.Objects;
 @Service
 public class WeatherService {
 
-//    private static final String APP_ID = "12917378";
-//    private static final String APP_SECRET = "5Vc0YjTj";
-//    private static final String REQ_URL = "https://v0.yiketianqi.com/free/day";
-
-    private static final String APP_ID = "55492464";
-    private static final String APP_SECRET = "Wvz63og4";
+    //yiketianqi.com 注册账号，获取id和密钥，请求接口获取天气
+    private static final String APP_ID = "";
+    private static final String APP_SECRET = "";
     private static final String REQ_URL = "https://v0.yiketianqi.com/free/day";
 
 
