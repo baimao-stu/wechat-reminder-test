@@ -61,8 +61,8 @@ public class ToUserInfoConfig {
     @Primary
     public ToUserInfoConfig toUserInfoConfig() {
         /**推送的的对象 */
-        final LocalDate loveDay = LocalDate.of(2022, 8, 22);
-        final LocalDate birthday = LocalDate.of(1997, 10, 15);
+//        final LocalDate loveDay = LocalDate.of(2022, 8, 22);
+//        final LocalDate birthday = LocalDate.of(1997, 10, 15);
 
         final LocalDate schoolDay = LocalDate.of(2022, 8, 29);
         final String city = "汕头";
